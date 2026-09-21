@@ -1,4 +1,8 @@
 node_modules/
 .env
+81266762Gsn## Connect to Postgres via the shared transaction-mode pooler (IPv4-only)
+DATABASE_URL="postgresql://postgres.gykvvduognsnchhhvzzu:[YOUR-PASSWORD]@aws-0-us-west-2.pooler.supabase.com:6543/postgres?pgbouncer=true"
 
+# Connect to Postgres via the shared session-mode pooler (used for migrations)
+DIRECT_URL="postgresql://postgres.gykvvduognsnchhhvzzu:[YOUR-PASSWORD]@aws-0-us-west-2.pooler.supabase.com:5432/postgres"
 /src/generated/prisma

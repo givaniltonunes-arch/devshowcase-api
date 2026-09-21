@@ -25,6 +25,8 @@ model Project {
   titulo       String
   descricao    String?
   repositorio  String?
+  notaMedia Float @default(0)
+  upvotes Int @default(0)
   profileId    Int
   profile      Profile      @relation(fields: [profileId], references: [id])
   feedbacks    Feedback[]
@@ -36,6 +38,7 @@ model Feedback {
   autor     String
   comentario String
   projectId Int
+  nota       Int
   project   Project @relation(fields: [projectId], references: [id])
 }
 

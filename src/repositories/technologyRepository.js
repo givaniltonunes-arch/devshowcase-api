@@ -1,8 +1,12 @@
 const prisma = require("../lib/prisma");
 
 async function criarTechnology(dados) {
-  return prisma.technology.create({
-    data: dados,
+  return prisma.technology.upsert({
+    where: {
+      nome: dados.nome,
+    },
+    update: dados,
+    create: dados,
   });
 }
 

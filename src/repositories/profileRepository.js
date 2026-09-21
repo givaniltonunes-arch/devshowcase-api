@@ -1,8 +1,12 @@
 const prisma = require("../lib/prisma");
 
 async function criarProfile(dados) {
-  return prisma.profile.create({
-    data: dados,
+  return prisma.profile.upsert({
+    where: {
+      email: dados.email,
+    },
+    update: dados,
+    create: dados,
   });
 }
 

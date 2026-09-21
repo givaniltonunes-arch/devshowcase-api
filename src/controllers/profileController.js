@@ -17,6 +17,7 @@ async function criar(req, res) {
     const profile = await criarProfile(req.body);
     return res.status(201).json(profileOutputDto(profile));
   } catch (error) {
+    console.error(error);
     return res.status(500).json({
       erro: "Não foi possível criar o perfil.",
     });
