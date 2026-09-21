@@ -9,7 +9,7 @@ if (!databaseUrl) {
   throw new Error("DATABASE_URL não está definida.");
 }
 
-console.log("DB_HOST:", new URL(databaseUrl).host);
+
 
 const adapter = new PrismaPg({
   connectionString: databaseUrl,
